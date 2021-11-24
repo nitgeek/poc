@@ -1,0 +1,85 @@
+{
+    "info": {
+        "_postman_id": "ed31c88d-6728-459c-8d68-269537c52410",
+        "name": "CustomerProfileManagement",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "get Customer Profile",
+            "id": "0e8ec058-67d9-493c-b3cb-ba3debf60e1e",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "/v1/customerprofile/customerProfiles?mobileNo=7082601169&emailAddress=nitin5.kumar@airtel.com",
+                    "path": [
+                        "v1",
+                        "customerprofile",
+                        "customerProfiles"
+                    ],
+                    "query": [
+                        {
+                            "key": "mobileNo",
+                            "value": "7082601169",
+                            "description": "(Required) "
+                        },
+                        {
+                            "key": "emailAddress",
+                            "value": "nitin5.kumar@airtel.com",
+                            "description": "(Required) "
+                        }
+                    ]
+                }
+            },
+            "response": [
+                {
+                    "id": "281f33fe-edf6-44ad-aa29-9b8a2762882f",
+                    "name": "Successfully retrieved customer profile",
+                    "originalRequest": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "/v1/customerprofile/customerProfiles?mobileNo=7082601169&emailAddress=nitin5.kumar@airtel.com",
+                            "path": [
+                                "v1",
+                                "customerprofile",
+                                "customerProfiles"
+                            ],
+                            "query": [
+                                {
+                                    "key": "mobileNo",
+                                    "value": "7082601169"
+                                },
+                                {
+                                    "key": "emailAddress",
+                                    "value": "nitin5.kumar@airtel.com"
+                                }
+                            ]
+                        }
+                    },
+                    "status": "OK",
+                    "code": 200,
+                    "_postman_previewlanguage": "json",
+                    "header": [
+                        {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                        }
+                    ],
+                    "cookie": [],
+                    "responseTime": null,
+                    "body": "{\n \"address\": {\n  \"addressLine1\": \"Example\",\n  \"addressLine2\": \"Example\",\n  \"addressLine3\": \"Example\",\n  \"city\": \"Example\",\n  \"pincode\": \"Example\",\n  \"state\": \"Example\"\n },\n \"emailAddress\": \"nitin5.kumar@airtel.com\",\n \"mobileNo\": \"7082601169\",\n \"name\": {\n  \"firstName\": \"Example\",\n  \"lastName\": \"Example\",\n  \"middleName\": \"Example\"\n }\n}"
+                }
+            ]
+        }
+    ],
+    "variable": [
+        {
+            "id": "494966f1-5e16-44b8-a8a0-c48d8a36ff93",
+            "key": "baseUrl",
+            "value": "https://virtserver.swaggerhub.com/airtel6/CustomerProfileManagement/1.0.0",
+            "type": "string"
+        }
+    ]
+}
