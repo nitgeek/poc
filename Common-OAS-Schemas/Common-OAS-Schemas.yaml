@@ -1,0 +1,71 @@
+components:
+  schemas:
+    mobileNo:
+      maxLength: 10
+      minLength: 10
+      type: string
+      example: "7082601169"
+    emailAddress:
+      type: string
+      example: nitin5.kumar@airtel.com
+    name:
+      required:
+      - firstName
+      - lastName
+      - middleName
+      type: object
+      properties:
+        firstName:
+          type: string
+          example: Nitin
+        middleName:
+          type: string
+          example: Kummar
+        lastName:
+          type: string
+          example: Sharma
+      additionalProperties: true
+      example:
+        strict: true
+        value:
+          firstName: Nitin
+          middleName: Kumar
+          lastName: Sharma
+    address:
+      required:
+      - addressLine1
+      - addressLine2
+      - addressLine3
+      - city
+      - pincode
+      - state
+      type: object
+      properties:
+        addressLine1:
+          type: string
+          example: 2290 E Block
+        addressLine2:
+          type: string
+          example: Phase 2
+        addressLine3:
+          type: string
+          example: Laxman Vihar
+        city:
+          type: string
+          example: Gurgaon
+        state:
+          type: string
+          example: Haryana
+        pincode:
+          type: string
+          example: "122001"
+      additionalProperties: true
+      example:
+        strict: true
+        value:
+          addressLine1: 2290 E Block
+          addressLine2: Phase 2
+          addressLine3: Laxman Vihar
+          city: Gurgaon
+          state: Haryana
+          pincode: "122001"
