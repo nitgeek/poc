@@ -1,0 +1,122 @@
+openapi: 3.0.0
+info:
+  title: CustomerProfileManagement
+  version: 1.0.0
+servers:
+- url: https://virtserver.swaggerhub.com/airtel6/CustomerProfileManagement/1.0.0
+  description: SwaggerHub API Auto Mocking
+paths:
+  /customerProfiles:
+    get:
+      operationId: getCustomerProfile
+      parameters:
+      - name: mobileNo
+        in: query
+        required: true
+        style: form
+        explode: true
+        schema:
+          $ref: '#/components/schemas/mobileNo'
+      - name: emailAddress
+        in: query
+        required: true
+        style: form
+        explode: true
+        schema:
+          $ref: '#/components/schemas/emailAddress'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/customerProfile'
+      servers:
+      - url: /v1/customerprofile
+components:
+  schemas:
+    mobileNo:
+      maxLength: 10
+      minLength: 10
+      type: string
+      example: "7082601169"
+    emailAddress:
+      type: string
+      example: nitin5.kumar@airtel.com
+    customerProfile:
+      required:
+      - address
+      - emailAddress
+      - mobileNo
+      - name
+      type: object
+      properties:
+        name:
+          $ref: '#/components/schemas/name'
+        mobileNo:
+          $ref: '#/components/schemas/mobileNo'
+        address:
+          $ref: '#/components/schemas/address'
+        emailAddress:
+          $ref: '#/components/schemas/emailAddress'
+      additionalProperties: true
+    name:
+      required:
+      - firstName
+      - lastName
+      - middleName
+      type: object
+      properties:
+        firstName:
+          type: string
+          example: Example
+        middleName:
+          type: string
+          example: Example
+        lastName:
+          type: string
+          example: Example
+      additionalProperties: true
+      example:
+        strict: true
+        value:
+          firstName: Nitin
+          middleName: Kumar
+          lastName: Sharma
+    address:
+      required:
+      - addressLine1
+      - addressLine2
+      - addressLine3
+      - city
+      - pincode
+      - state
+      type: object
+      properties:
+        addressLine1:
+          type: string
+          example: Example
+        addressLine2:
+          type: string
+          example: Example
+        addressLine3:
+          type: string
+          example: Example
+        city:
+          type: string
+          example: Example
+        state:
+          type: string
+          example: Example
+        pincode:
+          type: string
+          example: Example
+      additionalProperties: true
+      example:
+        strict: true
+        value:
+          addressLine1: 2290 E Block
+          addressLine2: Phase 2
+          addressLine3: Laxman Vihar
+          city: Gurgaon
+          state: Haryana
+          pincode: "122001"
