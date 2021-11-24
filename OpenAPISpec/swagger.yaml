@@ -26,6 +26,7 @@ paths:
           $ref: '#/components/schemas/emailAddress'
       responses:
         "200":
+          description: Successfully retrieved customer profile
           content:
             application/json:
               schema:
